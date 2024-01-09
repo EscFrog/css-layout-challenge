@@ -84,7 +84,6 @@ body {
   height: var(--circle-diameter);
   display: flex;
   justify-content: space-between;
-  /* align-items: center; */
   gap: 10px;
 }
 
