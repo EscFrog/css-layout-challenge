@@ -22,6 +22,8 @@ body {
   background-color: var(--border-color);
   padding: var(--border-width);
   box-sizing: border-box;
+  font-style: italic;
+  font-weight: 600;
   text-transform: uppercase;
   display: grid;
   grid-template-rows: var(--bar-thickness) 1fr var(--bar-thickness);
@@ -56,6 +58,7 @@ body {
 }
 
 .info .info__pagelink li {
+  font-style: italic;
   writing-mode: vertical-rl;
   text-orientation: upright;
 }
@@ -80,6 +83,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  font-style: normal;
 }
 
 .main {
