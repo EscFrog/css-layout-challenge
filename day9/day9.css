@@ -3,7 +3,7 @@
 :root {
   --border-width: 6px;
   --border-color: #FC6B3A;
-  --frame-thickness: 40px;
+  --bar-thickness: 32px;
 }
 
 body {
@@ -16,57 +16,72 @@ body {
   align-items: center;
 }
 
-.grid {
+.wrapper {
   width: 90%;
   height: 90%;
   background-color: var(--border-color);
+  padding: var(--border-width);
+  box-sizing: border-box;
+  text-transform: uppercase;
   display: grid;
-  grid-template-rows: var(--frame-thickness) 10fr var(--frame-thickness);
-  grid-template-columns: var(--frame-thickness) 1fr 1fr var(--frame-thickness);
+  grid-template-rows: var(--bar-thickness) 1fr var(--bar-thickness);
+  grid-template-columns: var(--bar-thickness) 1fr var(--bar-thickness);
+  gap: var(--border-width)
 }
 
-.frame-row {
-  grid-column: 1 / -1;
-  margin: var(--border-width);
+.bar-row {
+  grid-column: span 3;
   background-color: white;
   color: var(--border-color);
   display: flex;
   align-items: center;
-}
-
-.frame-col {
-  margin: 0px var(--border-width);
-  display: flex;
-  gap: var(--border-width);
-  writing-mode: vertical-lr;
-  text-orientation: mixed;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .info {
-  /* height: 100%; */
-  background-color: white;
-  text-orientation: upright;
-}
-
-.info ul {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.newsletter {
   height: 100%;
-  background-color: white;
+  color: var(--border-color);
   display: flex;
+  flex-direction: column;
+  gap: var(--border-width);
+}
+
+.info .info__pagelink {
+  color: white;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-.sociallink {
-  height: 100%;
-  background-color: white;
+.info .info__pagelink li {
+  writing-mode: vertical-rl;
+  text-orientation: upright;
 }
 
-.image {
+.info .info__newsletter {
+  height: 100%;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.info .info__newsletter span {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+}
+
+.info .info__sociallink {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.main {
   background-color: black;
 }
