@@ -19,12 +19,15 @@ body {
 .wrapper {
   width: 90%;
   height: 90%;
+  min-height: 740px;
   background-color: var(--border-color);
+  color: var(--border-color);
   padding: var(--border-width);
   box-sizing: border-box;
   font-style: italic;
   font-weight: 600;
   text-transform: uppercase;
+  position: relative;
   display: grid;
   grid-template-rows: var(--bar-thickness) 1fr var(--bar-thickness);
   grid-template-columns: var(--bar-thickness) 1fr var(--bar-thickness);
@@ -34,38 +37,38 @@ body {
 .bar-row {
   grid-column: span 3;
   background-color: white;
-  color: var(--border-color);
+  font-size: 20px;
+  overflow: hidden;
   display: flex;
   align-items: center;
   white-space: nowrap;
-  overflow: hidden;
 }
 
 .info {
   height: 100%;
-  color: var(--border-color);
-  display: flex;
-  flex-direction: column;
+  display: grid;
   gap: var(--border-width);
 }
 
 .info .info__pagelink {
   color: white;
+  padding: var(--border-width);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 10px;
 }
 
 .info .info__pagelink li {
-  font-style: italic;
   writing-mode: vertical-rl;
   text-orientation: upright;
 }
 
 .info .info__newsletter {
-  height: 100%;
   background-color: white;
+  padding: var(--border-width);
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -79,13 +82,89 @@ body {
 
 .info .info__sociallink {
   background-color: white;
+  padding: var(--border-width);
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 10px;
   font-style: normal;
 }
 
 .main {
   background-color: black;
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.main__image:nth-child(1) {
+  background-image: url("https://source.unsplash.com/random?india");
+}
+
+.main__image:nth-child(2) {
+  background-image: url("https://source.unsplash.com/random?curry");
+}
+
+.main__image img {
+  object-fit: contain;
+}
+
+.main__textframe {
+  position: absolute;
+  color: white;
+  width: 100%;
+  height: 100%;
+  font-style: normal;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.main__textframe__title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.main__textframe__subtitle h2 {
+  font-size: 80px;
+}
+
+.main__textframe__title h1 {
+  font-size: 120px;
+}
+
+.buy {
+  height: 100%;
+  display: grid;
+  gap: var(--border-width);
+}
+
+.buy div {
+ background-color: #45AB4F;
+ color: white;
+ writing-mode: vertical-rl;
+ text-orientation: upright;
+ display: flex;
+ justify-content: space-around;
+ align-items: center;
+}
+
+.chatBtn {
+  background-color: var(--border-color);
+  width: 40px;
+  height: 40px;
+  border-radius: 6px;
+  box-shadow: 1px 1px 6px black;
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
