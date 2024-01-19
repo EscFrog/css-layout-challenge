@@ -1,8 +1,90 @@
 @import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
 
+:root {
+  --default-red: #ff0000;
+  /* --default-red: #7A9972; */
+  --default-orange: #FF6800;
+  /* --default-orange: #C67339; */
+  --padding-size: 30px;
+  --gap-size: 3px;
+}
+
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   width: 100%;
   height: 100vh;
-  background-color: brown;
+  /* background-color: var(--default-orange); */
+}
+
+.wrapper {
+  height: 100%;
+  display: grid;
+  grid-template-columns: 18fr 1fr 10fr;
+}
+
+.innerFrame {
+  height: 100%;
+  padding: 0 var(--padding-size) var(--padding-size) var(--padding-size);
+  box-sizing: border-box;
+  background-color: var(--default-orange);
+}
+
+.teams {
+  background-color: var(--default-red);
+  height: 100%;
+  display: grid;
+  grid-template-rows: var(--padding-size) repeat(6, 1fr);
+  gap: var(--gap-size);
+  border-left: var(--gap-size) solid var(--default-red);
+  border-right: var(--gap-size) solid var(--default-red);
+  border-bottom: var(--gap-size) solid var(--default-red);
+}
+
+.team {
+  display: grid;
+  grid-template-columns: 1fr 17fr 6fr;
+  gap: var(--gap-size);
+  color: var(--default-red);
+}
+
+.team > * {
+  background-color: var(--default-orange);
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+}
+
+.team__category,
+.team__title {
+  grid-row: span 2;
+}
+
+.team__category {
+  justify-content: center;
+}
+
+.team__category span {
+  writing-mode: vertical-lr;
+  transform: rotate(180deg);
+}
+
+.team__field,
+.team__history {
+  justify-content: center;
+}
+
+.team__history div {
+  background-color: var(--default-red);
+  color: var(--default-orange);
+  width: 90%;
+  height: 90%;
+  border-radius: 40px;
+}
+
+.middleBar {
+  background-color: azure;
+}
+
+.articles {
+  background-color: var(--default-red);
 }
