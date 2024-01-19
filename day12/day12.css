@@ -55,6 +55,7 @@ h2 {
   min-width: fit-content;
   display: grid;
   grid-template-columns: 1fr 17fr 6fr;
+  /* grid-template-columns: minmax(40px, 1fr) minmax(666px, 17fr) minmax(236px, 6fr); */
   gap: var(--line-thickness);
   color: var(--default-red);
 }
