@@ -1,8 +1,206 @@
 @import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
 
+:root {
+  --line-thickness: 0.25rem;
+  --pad-size: 1rem;
+}
+
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   width: 100%;
   height: 100vh;
-  background-color: chocolate;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrapper {
+  width: 95%;
+  height: 95%;
+  background-color: black;
+  outline: var(--line-thickness) solid black;
+  font-weight: 300;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(11, minmax(min-content, 1fr));
+  gap: var(--line-thickness);
+  position: relative;
+}
+
+.wrapper > * {
+  background-color: white;
+}
+
+.sectionLabel {
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+h1 {
+  font-size: 44px;
+}
+
+h2 {
+  font-size: 32px;
+}
+
+.intro {
+  grid-column: 1 / span 3;
+  grid-row: 1 / -1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.intro__header {
+  padding: var(--pad-size);
+}
+
+.intro__header .sectionLabel,
+.home__header .sectionLabel {
+  margin-bottom: 15%;
+}
+
+.intro__nav {
+  background-color: black;
+  padding: 1px 0;
+}
+
+.intro__nav ul {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.intro__nav ul li {
+  background-color: white;
+  padding: 0.5rem var(--pad-size);
+  text-transform: uppercase;
+}
+
+.intro__nav ul li:first-child {
+  background-color: #EEEEEE;
+}
+
+.intro__nav ul li:hover {
+  background-color: #EEEEEE;
+}
+
+.intro__footer {
+  height: 100%;
+  padding: var(--pad-size);
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  gap: 6%;
+}
+
+.intro__footer > * {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.intro__footer .address .city {
+  font-weight: bold;
+}
+
+.home {
+  grid-column: 4 / span 3;
+  grid-row: span 9;
+}
+
+.home__header {
+  padding: var(--pad-size);
+}
+
+.home__PR {
+  height: 100%;
+  padding: var(--pad-size);
+  display: flex;
+  flex-direction: column;
+  gap: 2%;
+}
+
+.serv {
+  grid-column: 4 / span 3;
+  grid-row: 10 / span 2;
+  padding: var(--pad-size);
+}
+
+.serv__header {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.wrapper .img-cell {
+  object-fit: cover;
+}
+
+.img01 {
+  grid-column: 7 / span 3;
+  grid-row: span 9;
+  background-image: url("https://source.unsplash.com/random/1?office");
+}
+
+.img02 {
+  grid-column: 10 / span 3;
+  grid-row: span 5;
+  background-image: url("https://source.unsplash.com/random/2?office");
+}
+
+.img03 {
+  grid-column: 10 / span 2;
+  grid-row: 6 / span 2;
+  background-image: url("https://source.unsplash.com/random/3?office");
+}
+
+.img04 {
+  background-image: url("https://source.unsplash.com/random/4?office");
+}
+
+.img05 {
+  background-image: url("https://source.unsplash.com/random/5?office");
+}
+
+.img06 {
+  grid-column-start: 10;
+  grid-row: 8 / span 2;
+  background-image: url("https://source.unsplash.com/random/6?office");
+}
+
+.img07 {
+  grid-column: 11 / span 2;
+  grid-row: 8 / span 2;
+  background-image: url("https://source.unsplash.com/random/7?office");
+}
+
+.img08 {
+  grid-row: 10 / span 2;
+  background-image: url("https://source.unsplash.com/random/8?office");
+}
+
+.img09 {
+  background-image: url("https://source.unsplash.com/random/9?office");
+}
+
+.img10 {
+  grid-row-start: 11;
+  background-image: url("https://source.unsplash.com/random/10?office");
+}
+
+.img11 {
+  grid-column: 9 / span 4;
+  grid-row: 10 / span 2;
+  background-image: url("https://source.unsplash.com/random/11?office");
+}
+
+.indexNum {
+  background-color: initial;
+  position: absolute;
+  right: 0;
+  top: 5px;
+  font-size: 2rem;
 }
